@@ -1,8 +1,9 @@
 
-const Veggie = () => {
-  return (
-    <div>Veggie</div>
-  )
+function Veggie()
+{
+  return <div>
+    
+  </div>
 }
 
-export default Veggie
+export default Veggie;
