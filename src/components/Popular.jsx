@@ -9,9 +9,6 @@ function Popular()
 
   const [popular, setPopular] = useState([]);
   
-  useEffect(() => {
-    getPopular();
-  },[]);
 
   const getPopular = async () => {
     const check = localStorage.getItem('popular');
@@ -30,6 +27,10 @@ function Popular()
       console.log(data.recipes);
     }
   }
+
+  useEffect(() => {
+    getPopular();
+  },[]);
 
   return (
     <div>
@@ -101,4 +102,5 @@ const Gradient = styled.div`
   height: 100%;
   background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
 `;
+
 export default Popular;
