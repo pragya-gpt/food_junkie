@@ -12,6 +12,7 @@ function Cuisine() {
   let params = useParams();
 
   const getCuisine = async (name) => {
+    
     const data = await fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&cuisine=${name}`);
     const recipes = await data.json();
     setCuisine(recipes.results);
@@ -22,6 +23,7 @@ function Cuisine() {
     }, [params.type]);
 
     return (
+      <div>
         <Wrapper
           animate={{opacity: 1}}
           initial={{opacity: 0}}
@@ -44,6 +46,7 @@ function Cuisine() {
             })}
           </Splide>
         </Wrapper>
+        </div>
     );
           
   }
